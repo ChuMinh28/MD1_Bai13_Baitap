@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Check if the number is Prime</label>
+<input id="input" type="text">
+<button onclick="isPrime()">Click to Check</button>
+<h2 id="result"></h2>
+<script>
+
+    function checkNumber(n){
+        let a = 1;
+        if (n <2)
+            return;
+        let i = 2;
+        while(i <n){
+            if( n%i===0 ) {
+                a = 0;
+                break;
+            }
+            i++;
+        }
+        return a;
+    }
+function isPrime() {
+    let n= +document.getElementById('input').value;
+    let i = 0,
+        check=0,
+        result ="";
+    while ( i <= n){
+        check = checkNumber(i);
+        if( check === 1 ) result += i + " ";
+        ++i;
+    }
+    console.log(result)
+    document.getElementById('result').innerHTML = 'Cac so sau day la so nguyen to: '+result
+}
+</script>
+</body>
+</html>
